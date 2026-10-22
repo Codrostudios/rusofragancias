@@ -1,91 +1,183 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Perfil - Juan Gómez</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #2f2f92, #2193b0);
-      color: #ffffff;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      color: #a2f4ff;
-    }
-
-    h2 {
-      color: #e7d781;
-      font-weight: 500;
-      margin-top: 5px;
-      margin-bottom: 30px;
-    }
-
-    .info p {
-      font-size: 1.1rem;
-      margin: 10px 0;
-    }
-
-    .highlight {
-      font-weight: bold;
-      color: #e7d781;
-    }
-
-    .contact-box {
-      margin-top: 40px;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 25px;
-      border-radius: 12px;
-      display: inline-block;
-    }
-
-    .whatsapp-btn {
-      background-color: #25D366;
-      color: white;
-      text-decoration: none;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      display: inline-block;
-      margin-top: 15px;
-      transition: background 0.3s ease;
-    }
-
-    .whatsapp-btn:hover {
-      background-color: #1da851;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#071e18">
+<meta name="description" content="RUSO Fragancias — una selección de perfumes de diseñador, nicho y árabes.">
+<title>RUSO FRAGANCIAS | Perfumería de autor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#071e18;--deep:#0a2b21;--green:#103e2f;--gold:#c6a76a;--pale:#eadbb5;--ivory:#f4f0e6;--muted:#a8b5ab;--stroke:rgba(234,219,181,.25)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--ivory);font-family:"DM Sans",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+.site{overflow:hidden;position:relative}
+.site:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.13;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E")}
+.header{position:absolute;z-index:10;top:0;left:0;width:100%;padding:0 clamp(22px,6vw,92px);height:94px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(234,219,181,.15)}
+.logo{display:flex;align-items:center;text-decoration:none;min-width:130px}
+.logo img{max-width:170px;max-height:58px;object-fit:contain;display:block}
+.logo-fallback{font-family:Italiana,serif;letter-spacing:.23em;font-size:23px;color:var(--pale)}
+.logo-fallback small{display:block;text-align:center;font:8px "DM Sans",sans-serif;letter-spacing:.36em;margin-top:4px}
+.nav{display:flex;gap:clamp(18px,3vw,44px);align-items:center}
+.nav a{text-decoration:none;text-transform:uppercase;font-size:9px;letter-spacing:.18em;color:#d5d9ce;transition:color .25s}
+.nav a:hover{color:var(--pale)}
+.nav .nav-cta{border:1px solid var(--gold);padding:13px 17px;color:var(--pale)}
+.menu-toggle{display:none;background:none;border:1px solid var(--stroke);color:var(--pale);padding:10px 13px;font:inherit}
+.hero{min-height:790px;min-height:100svh;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;position:relative;background:radial-gradient(ellipse at 22% 55%,rgba(20,82,57,.48),transparent 55%),linear-gradient(115deg,#071e18 0%,#09291f 55%,#071e18 100%)}
+.hero-copy{align-self:center;padding:145px 0 100px clamp(24px,10vw,150px);position:relative;z-index:2}
+.kicker{display:flex;align-items:center;gap:13px;color:var(--gold);font-size:9px;text-transform:uppercase;letter-spacing:.32em;margin-bottom:27px}
+.kicker:before{content:"";width:36px;height:1px;background:var(--gold)}
+h1{font:400 clamp(64px,8vw,118px)/.86 Italiana,serif;letter-spacing:-.035em;margin:0;color:var(--ivory)}
+h1 span{display:block;color:var(--pale);font-style:italic;margin-top:13px}
+.hero-desc{font-size:13px;line-height:2;color:#b6c4b9;max-width:390px;margin:30px 0 34px;font-weight:400}
+.hero-link{display:inline-flex;align-items:center;gap:30px;padding:17px 20px;background:var(--pale);color:var(--ink);text-decoration:none;text-transform:uppercase;letter-spacing:.16em;font-size:9px;font-weight:700;transition:background .3s,transform .3s}
+.hero-link:hover{background:#fff1c9;transform:translateY(-2px)}
+.hero-link b{font-size:17px;font-weight:400}
+.hero-meta{display:flex;gap:18px;align-items:center;margin-top:55px;color:#81958a;font-size:9px;letter-spacing:.14em;text-transform:uppercase}
+.hero-meta i{width:4px;height:4px;background:var(--gold);border-radius:50%}
+.hero-visual{position:relative;min-height:790px;min-height:100svh;overflow:hidden}
+.hero-photo{position:absolute;inset:0;background-image:linear-gradient(90deg,#09291f 0%,rgba(9,41,31,.25) 25%,rgba(7,30,24,.05) 65%,rgba(7,30,24,.35) 100%),linear-gradient(0deg,rgba(7,30,24,.65),transparent 45%),url("https://res.cloudinary.com/rgriiass/image/upload/v1792641093/port-pagina.png");background-size:cover;background-position:center}
+.visual-frame{position:absolute;inset:12% 10% 12% 8%;border:1px solid rgba(234,219,181,.55);pointer-events:none}
+.visual-frame:before,.visual-frame:after{content:"";position:absolute;width:26px;height:26px;border-color:var(--pale);border-style:solid}
+.visual-frame:before{top:-1px;left:-1px;border-width:1px 0 0 1px}
+.visual-frame:after{bottom:-1px;right:-1px;border-width:0 1px 1px 0}
+.visual-label{position:absolute;right:clamp(25px,6vw,80px);bottom:10%;writing-mode:vertical-rl;color:var(--pale);font-size:9px;letter-spacing:.32em;text-transform:uppercase}
+.vertical-index{position:absolute;left:clamp(18px,4vw,55px);top:50%;transform:translateY(-50%);writing-mode:vertical-rl;font-size:9px;letter-spacing:.3em;color:rgba(234,219,181,.7)}
+.marquee{overflow:hidden;border-top:1px solid var(--stroke);border-bottom:1px solid var(--stroke);padding:18px 0;background:#09271f}
+.marquee-track{display:flex;justify-content:center;gap:30px;white-space:nowrap;color:var(--pale);font:20px Italiana,serif;letter-spacing:.12em}
+.marquee-track span{color:var(--gold);font-size:13px;align-self:center}
+.collections{padding:120px clamp(22px,6vw,90px) 130px;position:relative}
+.section-top{display:grid;grid-template-columns:1fr auto;align-items:end;gap:30px;max-width:1320px;margin:0 auto 52px}
+.section-eyebrow{color:var(--gold);font-size:9px;letter-spacing:.3em;text-transform:uppercase}
+h2{font:400 clamp(44px,6vw,76px)/.95 Italiana,serif;margin:17px 0 0;letter-spacing:-.02em}
+.section-intro{max-width:290px;color:#aab8ad;font-size:12px;line-height:1.9;margin:0 0 4px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:1320px;margin:0 auto}
+.card{min-height:470px;position:relative;isolation:isolate;overflow:hidden;text-decoration:none;background:#0c3327;border:1px solid rgba(234,219,181,.24);display:flex;flex-direction:column;justify-content:space-between;padding:25px;transition:border-color .35s,transform .35s}
+.card:hover{transform:translateY(-6px);border-color:rgba(234,219,181,.8)}
+.card-bg{position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center;transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .5s;filter:saturate(.72)}
+.card:hover .card-bg{transform:scale(1.05);filter:saturate(.95)}
+.card-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,24,18,.55),rgba(4,24,18,.08) 40%,rgba(4,24,18,.92) 100%)}
+.bg-designer{background-image:url("https://res.cloudinary.com/rgriiass/image/upload/v1792640893/erosss.png")}
+.bg-niche{background-image:url("https://res.cloudinary.com/rgriiass/image/upload/v1792640721/erba-pur.png")}
+.bg-arab{background-image:url("https://res.cloudinary.com/rgriiass/image/upload/v1792640402/9pm.png")}
+.card-top{display:flex;justify-content:space-between;align-items:center}
+.card-no{font:22px Italiana,serif;color:var(--pale)}
+.card-tag{font-size:8px;text-transform:uppercase;letter-spacing:.2em;color:#e5dcc4;border:1px solid rgba(234,219,181,.45);padding:9px 10px}
+.card-bottom{position:relative}
+.card-title{font:400 clamp(33px,3.3vw,49px)/.95 Italiana,serif;margin:0 0 15px;color:#f6f0e2}
+.card-copy{max-width:290px;font-size:11px;line-height:1.8;color:#c3cbbf;margin:0 0 23px}
+.card-action{border-top:1px solid rgba(234,219,181,.42);padding-top:18px;display:flex;justify-content:space-between;align-items:center;text-transform:uppercase;letter-spacing:.17em;font-size:9px;color:var(--pale)}
+.card-action b{font-size:20px;font-weight:400;transition:transform .3s}
+.card:hover .card-action b{transform:translate(3px,-3px)}
+.manifesto{padding:0 clamp(22px,6vw,90px) 120px}
+.manifesto-inner{max-width:1320px;margin:auto;display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center;border-top:1px solid var(--stroke);padding-top:52px}
+.manifesto-mark{font:italic clamp(35px,5vw,65px)/.95 Italiana,serif;color:var(--pale);max-width:400px}
+.manifesto-text{max-width:550px;color:#aab8ad;font-size:12px;line-height:2}
+.manifesto-text strong{color:var(--ivory);font-weight:500}
+.footer{border-top:1px solid var(--stroke);padding:30px clamp(22px,6vw,90px);display:flex;justify-content:space-between;gap:20px;align-items:center;color:#81958a;font-size:9px;letter-spacing:.1em}
+.footer-brand{font:18px Italiana,serif;letter-spacing:.2em;color:var(--pale)}
+.footer-right{text-transform:uppercase;letter-spacing:.16em}
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.fade-up.visible{opacity:1;transform:none}
+@media(max-width:850px){
+ .header{height:78px;padding:0 22px}.nav{gap:15px}.nav a{font-size:8px;letter-spacing:.1em}.nav .nav-cta{padding:11px}
+ .hero{grid-template-columns:1fr;min-height:auto}.hero-copy{padding:145px 28px 55px}.hero-visual{min-height:480px;min-height:58svh;grid-row:2}.hero-photo{background-position:center 42%}.visual-frame{inset:7% 8%}
+ .hero-meta{margin-top:35px}.section-top{grid-template-columns:1fr;gap:18px}.section-intro{max-width:440px}
+ .cards{grid-template-columns:1fr;max-width:560px}.card{min-height:430px}.card-title{font-size:48px}
+ .manifesto-inner{grid-template-columns:1fr;gap:25px}.manifesto-mark{max-width:500px}
+}
+@media(max-width:580px){
+ .header{position:absolute}.nav{display:none;position:absolute;top:77px;left:0;right:0;padding:22px;background:#071e18;border-bottom:1px solid var(--stroke);flex-direction:column;align-items:stretch;gap:20px}
+ .nav.open{display:flex}.nav a{font-size:10px;padding:6px 0}.nav .nav-cta{text-align:center;padding:14px}
+ .menu-toggle{display:block;font-size:9px;letter-spacing:.16em;text-transform:uppercase}
+ .hero-copy{padding:130px 24px 45px}h1{font-size:clamp(60px,17vw,88px)}.hero-desc{font-size:12px;max-width:340px}
+ .hero-visual{min-height:390px}.hero-meta{font-size:8px;gap:10px}
+ .marquee-track{font-size:17px;gap:18px}.collections{padding:82px 20px 85px}h2{font-size:52px}.section-top{margin-bottom:32px}
+ .card{min-height:400px;padding:20px}.card-title{font-size:43px}.manifesto{padding-bottom:80px}.footer{flex-direction:column;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.fade-up{opacity:1;transform:none}}
+</style>
 </head>
 <body>
+<div class="site">
+<header class="header">
+  <a class="logo" href="#" aria-label="RUSO Fragancias, inicio">
+    <!-- CAMBIA ESTA URL POR EL ENLACE DIRECTO A TU LOGO -->
+    <img src="https://res.cloudinary.com/rgriiass/image/upload/v1792640066/ruso-frag-logo.png" alt="RUSO Fragancias" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <span class="logo-fallback" style="display:none">RUSO<small>FRAGANCIAS</small></span>
+  </a>
+  <nav class="nav" id="mainNav">
+    <a href="#colecciones">Colecciones</a>
+    <a href="#filosofia">Nuestra esencia</a>
+    <a class="nav-cta" href="#colecciones">Explorar perfumes ↗</a>
+  </nav>
+  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">Menú +</button>
+</header>
 
-  <h1>Juan Gómez</h1>
-  <h2>Medellín 🇨🇴 - Berlín 🇩🇪</h2>
-
-  <div class="info">
-    <p><span class="highlight">🎥 Comunicador Audiovisual</span><br>
-    Universidad de Medellín</p>
-
-    <p><span class="highlight">💻 Ingeniero en Desarrollo de Software</span><br>
-    University of Europe for Applied Sciences – Berlín, Alemania</p>
-
-    <p><span class="highlight">🎨 Tecnólogo en Diseño Gráfico</span><br>
-    Universidad de Palermo – Buenos Aires, Argentina</p>
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <div class="kicker">RUSO · FRAGANCIAS</div>
+    <h1>El lujo está<br>en lo que <span>dejas.</span></h1>
+    <p class="hero-desc">Hay aromas que acompañan. Y otros que se convierten en parte de ti. Explora una selección de fragancias con carácter, desde los grandes clásicos hasta las composiciones más inesperadas.</p>
+    <a class="hero-link" href="#colecciones">Encuentra tu fragancia <b>↗</b></a>
+    <div class="hero-meta"><span>Diseñador</span><i></i><span>Nicho</span><i></i><span>Árabes</span></div>
   </div>
+  <div class="hero-visual">
+    <div class="hero-photo"></div>
+    <div class="visual-frame"></div>
+    <div class="vertical-index">RUSO FRAGANCIAS — SELECCIÓN</div>
+    <div class="visual-label">Una presencia inolvidable</div>
+  </div>
+</section>
 
-  <div class="contact-box">
-    <p><strong>¿Quieres trabajar conmigo?</strong><br>
-    Escríbeme directamente:</p>
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><div>ELEGANCIA</div><span>✳</span><div>CARÁCTER</div><span>✳</span><div>EXCLUSIVIDAD</div><span>✳</span><div>ESENCIA</div></div></div>
 
-    <a class="whatsapp-btn" href="https://wa.me/573002180435" target="_blank">
-      💬 Enviar mensaje por WhatsApp
+<section class="collections" id="colecciones">
+  <div class="section-top fade-up">
+    <div><div class="section-eyebrow">Elige tu universo olfativo / 01—03</div><h2>Nuestras colecciones.<br>Tres formas de sentir.</h2></div>
+    <p class="section-intro">Cada fragancia tiene un lenguaje propio. Encuentra el tuyo entre estas tres formas de entender el perfume.</p>
+  </div>
+  <div class="cards">
+    <a class="card fade-up" href="ENLACE_CATALOGO_PERFUMES_DISENADOR" target="_blank" rel="noopener">
+      <div class="card-bg bg-designer"></div>
+      <div class="card-top"><span class="card-no">01</span><span class="card-tag">Elegancia icónica</span></div>
+      <div class="card-bottom"><h3 class="card-title">Perfumes de<br>Diseñador</h3><p class="card-copy">Firmas reconocidas, creaciones inolvidables y clásicos contemporáneos que definen el estilo.</p><div class="card-action"><span>Ver catálogo</span><b>↗</b></div></div>
+    </a>
+    <a class="card fade-up" href="ENLACE_CATALOGO_PERFUMES_NICHO" target="_blank" rel="noopener">
+      <div class="card-bg bg-niche"></div>
+      <div class="card-top"><span class="card-no">02</span><span class="card-tag">Expresión personal</span></div>
+      <div class="card-bottom"><h3 class="card-title">Perfumes de<br>Nicho</h3><p class="card-copy">Composiciones singulares, materias fascinantes y propuestas para quienes eligen salirse de lo común.</p><div class="card-action"><span>Ver catálogo</span><b>↗</b></div></div>
+    </a>
+    <a class="card fade-up" href="ENLACE_CATALOGO_PERFUMES_ARABES" target="_blank" rel="noopener">
+      <div class="card-bg bg-arab"></div>
+      <div class="card-top"><span class="card-no">03</span><span class="card-tag">Intensidad envolvente</span></div>
+      <div class="card-bottom"><h3 class="card-title">Perfumes<br>Árabes</h3><p class="card-copy">Ámbar, maderas y especias en aromas intensos, cálidos y con una estela que permanece.</p><div class="card-action"><span>Ver catálogo</span><b>↗</b></div></div>
     </a>
   </div>
+</section>
 
+<section class="manifesto" id="filosofia">
+  <div class="manifesto-inner fade-up">
+    <div class="manifesto-mark">“Tu aroma también cuenta tu historia.”</div>
+    <p class="manifesto-text">En <strong>RUSO FRAGANCIAS</strong>, creemos que elegir un perfume es mucho más que elegir un aroma: es encontrar una forma de expresarte. Por eso reunimos universos olfativos distintos en una experiencia sencilla, cuidada y personal. <strong>Descubre, compara y encuentra tu próxima firma.</strong></p>
+  </div>
+</section>
+</main>
+<footer class="footer"><div class="footer-brand">RUSO FRAGANCIAS</div><div>Una firma personal. Una memoria imborrable.</div><div class="footer-right">© <span id="year"></span> RUSO</div></footer>
+</div>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const toggle=document.getElementById('menuToggle'),nav=document.getElementById('mainNav');
+toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'Cerrar −':'Menú +'});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='Menú +'}));
+const items=document.querySelectorAll('.fade-up');
+if('IntersectionObserver'in window){const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}}),{threshold:.12});items.forEach((el,i)=>{el.style.transitionDelay=Math.min(i*90,220)+'ms';obs.observe(el)})}else{items.forEach(el=>el.classList.add('visible'))}
+</script>
 </body>
 </html>
